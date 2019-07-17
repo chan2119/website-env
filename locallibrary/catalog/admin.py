@@ -20,7 +20,7 @@ admin.site.register(Author,Authoradmin)
 
 @admin.register(BookInstance)
 class BookInstanceAdmin(admin.ModelAdmin):
-    list_filter = ('status', 'due_back','book','id')
+    list_filter = ('status', 'due_back','book','id','borrower')
     fieldsets = (
         (None, {
             "fields": (
@@ -28,7 +28,7 @@ class BookInstanceAdmin(admin.ModelAdmin):
             ),
         }),
         ('Acailability', {
-            'fields': ('status', 'due_back')
+            'fields': ('status', 'due_back','borrower')
         }),
     )
 
